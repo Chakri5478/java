@@ -1,27 +1,38 @@
 //Implementation of multiple inheritance
 class Animal{
 	String name;
-	void living(){
-		System.out.println("There are many types of animals");
+	Animal(String name){
+		this.name=name;
+	}
+	void eat(){
+		System.out.println(name+" is eating");
 	}
 }
 
 class Dog extends Animal{
-	
+	Dog(String name){
+		super(name);
+	}
 	void bark(){
-		System.out.println("Dog is a pet animal");
+		System.out.println(name+" is barking");
 	}
 }
 class Cat extends Dog{
-	void enemy(){
-		System.out.println("Dog and cat are enemies");
+	
+	Cat(String name){
+		super(name);
+	}
+	void sleep(){
+		System.out.println(name+" is sleeping");
 	}
 }
 public class MultipleInheritance{
 	public static void main(String args[]){
-		Cat d=new Cat();
-		d.living();
-		d.enemy();
+		Dog d=new Dog("raja");
+		d.eat();
 		d.bark();
+		Cat c=new Cat("tarun");
+		c.eat();
+		c.sleep();
 	}
 }
